@@ -20,7 +20,7 @@ app.listen(process.env.PORT ||3000,(req,res)=>{
 })
 
 app.get("/",(req,res)=>{
-    res.sendFile(__dirname+"\\signUp.html")
+    res.sendFile(__dirname+"/signUp.html")
  })
 
  app.post("/",(req,res)=>{
@@ -52,9 +52,9 @@ app.get("/",(req,res)=>{
    //sending the data from our server to mailchimp 
    const request=https.request(url,options,function(response){
    if(response.statusCode==200){
-    res.sendFile(__dirname+"\\success.html");
+    res.sendFile(__dirname+"/success.html");
    } else{
-    res.sendFile(__dirname+"\\failure.html");
+    res.sendFile(__dirname+"/failure.html");
    }
     response.on("data",function(data){
         const readable=JSON.parse(data)
